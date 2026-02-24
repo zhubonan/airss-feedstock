@@ -1,6 +1,6 @@
 airss.pl
 airss_version
-build_cell
+buildcell
 ca
 cabal
 castep2res

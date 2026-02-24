@@ -6,7 +6,7 @@ index 8236c57..79bb088 100644
  .DEFAULT:
  
 -all: get libsymspg.a
-+all:
++all: libsymspg.a
  
  SPGLIB=spglib-$(SPG_VERSION)
  

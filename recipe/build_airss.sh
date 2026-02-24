@@ -2,7 +2,7 @@
 
 set -ex
 
-LIBS="-llapack -lblas -lsymspg"
+LIBS="-llapack -lblas $PWD/lib/libsymspg.a"
 
 make \
   FC="$FC" \
@@ -26,3 +26,13 @@ cp -v \
 mkdir -p "${PREFIX}/bin"
 sed "s;@PREFIX@;${PREFIX};g" "${RECIPE_DIR}/scripts/airss.sh" > "${PREFIX}/bin/airss"
 chmod +x "${PREFIX}/bin/airss"
+
+# Exposed limited set of the executables
+for bin in $(cat ${RECIPE_DIR}/airss-tools.txt)
+do
+  cat > ${PREFIX}/bin/${bin} <<EOF
+#!/usr/bin/env bash
+exec "${PREFIX}/libexec/airss/${bin}" "\$@"
+EOF
+  chmod +x ${PREFIX}/bin/${bin}
+done
