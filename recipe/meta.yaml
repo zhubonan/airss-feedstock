@@ -1,13 +1,14 @@
 {% set name = "airss" %}
-{% set version = "0.9.3" %}
+{% set version = "0.9.4" %}
 
 package:
   name: {{ name|lower }}-pkg
   version: {{ version }}
 
 source:
-  - url: https://www.mtg.msm.cam.ac.uk/files/airss-{{ version }}.tgz 
+  - url: https://www.mtg.msm.cam.ac.uk/files/airss-v{{ version }}.tgz
     sha256: b54c61b2988b3e6ee6d01e8b73fc60d76f36ad47eeb459d1a0358e486195cc13
+    folder: airss
     patches:
       - patches/makefile.patch
       - patches/no-symmol.patch
