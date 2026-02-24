@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://www.mtg.msm.cam.ac.uk/files/airss-v{{ version }}.tgz
-    sha256: b54c61b2988b3e6ee6d01e8b73fc60d76f36ad47eeb459d1a0358e486195cc13
+    sha256: 5593cc4ee360d998764fceb188284fdf0ef781d206754176dcb360c65103ddaa
     folder: airss
     patches:
       - patches/makefile.patch
